@@ -51,7 +51,7 @@ class ViewController: UIViewController, UISearchBarDelegate {
                                     for(i,photoDictionary) in photoArray.enumerated() {
                                         if let imageURLString = photoDictionary["url_m"] as? String {
                                             let imageData = NSData(contentsOf: URL(string: imageURLString)!)
-                                            if let imageDataUnwrapped = imageData {
+                                            if imageData != nil {
 
                                                 let imageView = UIImageView(frame: CGRect(x:0, y:320*CGFloat(i), width:imageWidth, height:imageWidth))
                                                 if let url = URL(string: imageURLString) {
